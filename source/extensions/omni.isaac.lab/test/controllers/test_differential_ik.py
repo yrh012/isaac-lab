@@ -1,4 +1,4 @@
-# Copyright (c) 2022-2024, The Isaac Lab Project Developers.
+# Copyright (c) 2022-2025, The Isaac Lab Project Developers.
 # All rights reserved.
 #
 # SPDX-License-Identifier: BSD-3-Clause
@@ -179,7 +179,8 @@ class TestDifferentialIKController(unittest.TestCase):
                 # randomize root state yaw, ik should work regardless base rotation
                 root_state = robot.data.root_state_w.clone()
                 root_state[:, 3:7] = random_yaw_orientation(self.num_envs, self.sim.device)
-                robot.write_root_state_to_sim(root_state)
+                robot.write_root_pose_to_sim(root_state[:, :7])
+                robot.write_root_velocity_to_sim(root_state[:, 7:])
                 robot.reset()
                 # reset actions
                 ee_pose_b_des[:] = self.ee_pose_b_des_set[current_goal_idx]
