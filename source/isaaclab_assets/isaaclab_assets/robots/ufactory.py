@@ -5,7 +5,7 @@ from isaaclab.assets.articulation import ArticulationCfg
 
 UF_XARM6_WITH_GRIPPER = ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path="omniverse://localhost/Users/aica/ufactory/xarm_with_gripper/ufactory.usd",
+        usd_path="source/isaaclab_assets/data/ufactory_with_gripper/ufactory.usd",
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
             max_depenetration_velocity=5.0,
@@ -57,7 +57,7 @@ UF_XARM6_WITH_GRIPPER = ArticulationCfg(
 
 UF_XARM6= ArticulationCfg(
     spawn=sim_utils.UsdFileCfg(
-        usd_path="omniverse://localhost/Users/aica/ufactory/xarm/ufactory.usd",
+        usd_path="source/isaaclab_assets/data/ufactory/ufactory.usd",
         rigid_props=sim_utils.RigidBodyPropertiesCfg(
             disable_gravity=False,
             max_depenetration_velocity=5.0,
